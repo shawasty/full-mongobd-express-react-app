@@ -52,9 +52,24 @@ const getItemById = async (req, res) => {
         return res.status(500).send(error.message);
     }
   }
+  const deleteItem = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const deleted = await Item.findByIdAndDelete(id)
+      if (deleted) {
+        return res.status(200).send("Item deleted");
+      }
+      throw new Error("Item not found");
+    } catch (error) {
+      return res.status(500).send(error.message);
+    }
+  }
 
 modules.export = {
     createItem,
     getAllItems,
     getItemById,
+    updateItem,
+    deleteItem,
 }
+
