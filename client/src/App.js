@@ -10,6 +10,9 @@ import ItemEdit from './components/routes/ItemEdit';
 function App() {
   return (
     <div className="App">
+
+      {/* with complex , sometimes we will need to access the history of the objects closest Route match */}
+      {/* in react-router v5 there was withRouter which took care of the history, but has been depricated in v6 */}
       
       <Routes>
                 <Route path='/' element = { <Home/> }/>
@@ -22,5 +25,14 @@ function App() {
     </div>
   );
 }
+// the following is needed to replace withRouter
+// function withRouter (Child){
+//   return function withRouter(props)  {
+//     const location = useLocation()
+
+//     return <Child {...props} location = {location}/>
+//   }
+
+// }
 
 export default App;
