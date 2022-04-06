@@ -1,8 +1,7 @@
 
 
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import axios from 'axios'
-import Layout from '../shared/Layout';
 import { useState, useEffect } from 'react';
 
 const Items = () => {

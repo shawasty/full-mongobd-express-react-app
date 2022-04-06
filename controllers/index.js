@@ -24,7 +24,9 @@ const getAllItems = async (req, res) => {
 const getItemById = async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(id)
     const item = await Item.findById(id)
+    console.log(item)
     if (item) {
       return res.status(200).json({ item });
     }
