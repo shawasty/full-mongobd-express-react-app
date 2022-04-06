@@ -28,10 +28,12 @@ const Item = () => {
         // } catch (error) {
         //     console.log(error)
         // }
+        // OR THE CODE BELOW
         try {
             // the sequence for 
             const response = await axios.get(`http://localhost:3000/api/items/${id}`)
-            const result = response.data.item;
+            console.log('response',response)
+            const result = response.data;
             console.log('res',result )
             setItem(result)
             return result;
