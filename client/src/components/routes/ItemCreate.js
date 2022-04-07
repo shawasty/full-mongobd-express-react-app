@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import {  useParams,NavLink, useNavigate } from "react-router-dom";
+import {   useNavigate } from "react-router-dom";
 import axios from 'axios';
 import Layout from '../shared/Layout';
 import ItemForm from '../shared/ItemForm';
+import apiUrl from '../../apiConfig';
 
 const ItemCreate = () => {
 
@@ -32,7 +33,7 @@ const ItemCreate = () => {
 
         // if the entry is created in the database, save the response data to the state
         axios({
-            url:`http://localhost:3000/api/items/`,
+            url:`${apiUrl}/items/`,
             method : 'POST',
             data: item
         }).then((res)=>setCreateItem(res.data.item)).catch(console.error)

@@ -4,6 +4,7 @@ import {  useParams,NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import Layout from '../shared/Layout';
 import ItemForm from '../shared/ItemForm';
+import apiUrl from '../../apiConfig';
 
 
 
@@ -45,7 +46,7 @@ const ItemEdit = () => {
 
         // since we will be taking it to the database, we need axios
         axios({
-            url:`http://localhost:3000/api/items/${id}`,
+            url:`${apiUrl}/items/${id}`,
             method : 'PUT',
             data: item
         }).then(()=>setUpdated(true)).catch(console.error)
