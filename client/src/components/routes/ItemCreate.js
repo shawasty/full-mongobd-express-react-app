@@ -53,8 +53,8 @@ const ItemCreate = () => {
             cancelPath='/' 
             
             />
-            <h4>{item.title}</h4>
-            <p>Link: {item.link}</p>
+            {/* <h4>{item.title}</h4>
+            <p>Link: {item.link}</p> */}
 
         </Layout>
     );
