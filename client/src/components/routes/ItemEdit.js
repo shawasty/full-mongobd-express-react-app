@@ -4,6 +4,7 @@ import {  useParams,NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import Layout from '../shared/Layout';
 import ItemForm from '../shared/ItemForm';
+import apiUrl from '../../apiConfig';
 
 
 
@@ -21,7 +22,7 @@ const ItemEdit = () => {
     useEffect(()=>{
         const fetchData = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/api/items/${id}`)
+            const response = await axios.get(`${apiUrl}/items/${id}`)
              console.log ('itemEdit', response.data)
              setItem(response.data)
             
@@ -45,7 +46,7 @@ const ItemEdit = () => {
 
         // since we will be taking it to the database, we need axios
         axios({
-            url:`http://localhost:3000/api/items/${id}`,
+            url:`${apiUrl}/items/${id}`,
             method : 'PUT',
             data: item
         }).then(()=>setUpdated(true)).catch(console.error)
@@ -65,7 +66,6 @@ const ItemEdit = () => {
                     handleChange={(e) => handleChange(e)}
                     handleSubmit={(e) => handleSubmit(e)}
                     cancelPath={`/items/${id}`}        
-                
                 />
                 <h4>{item.title}</h4>
                 <p>Link: {item.link}</p>
