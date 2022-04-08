@@ -9,7 +9,7 @@ const Items = () => {
     
     const fetchData = async () => {
         try {
-          const response = await axios('http://localhost:3000/api/items')
+          const response = await axios('https://shawsitemapp.herokuapp.com/api/items')
 
           console.log('res', response.data.items)
           setItems(response.data.items)
