@@ -16,7 +16,7 @@ const Items = () => {
           setItems(response.data.items)
     
             } catch (error) {
-          console.error(error)
+          console.log(error)
             }
         // fetchData()
     }
